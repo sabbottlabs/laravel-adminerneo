@@ -42,6 +42,5 @@
         "sort-packages": true
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-    "scripts": {}
+    "prefer-stable": true
 }

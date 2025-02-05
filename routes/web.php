@@ -1,7 +1,7 @@
 <?php
 use SabbottLabs\AdminerNeo\Http\Controllers\AdminerNeoController;
 
-Route::get(config('adminerneo.route_prefix'), [AdminerNeoController::class, 'index'])
-    ->middleware(config('adminerneo.middleware'));
-
-    
+Route::match(['get', 'post'], '/', [AdminerNeoController::class, 'index'])
+    ->middleware(config('adminerneo.middleware'))->withoutMiddleware([
+        \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+    ]);

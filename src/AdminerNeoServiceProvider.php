@@ -3,6 +3,11 @@ namespace SabbottLabs\AdminerNeo;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
+use SabbottLabs\AdminerNeo\Http\Middleware\AdminerNeoMiddleware;
+
+use function resource_path;
+use function base_path;
+use function config_path;
 
 class AdminerNeoServiceProvider extends ServiceProvider
 {
@@ -25,10 +30,13 @@ class AdminerNeoServiceProvider extends ServiceProvider
                 mkdir($pluginsPath, 0755, true);
             }
     
+            // Get builder package path
+            $builderPath = base_path('vendor/sabbottlabs/laravel-adminerneo-builder');
+
             // Publish all files
             $this->publishes([
                 __DIR__.'/../config/adminerneo.php' => config_path('adminerneo.php'),
-                __DIR__.'/../resources/adminerneo' => resource_path('adminerneo'),
+                $builderPath . '/output' => resource_path('adminerneo'),
             ], 'adminerneo');
         }
     

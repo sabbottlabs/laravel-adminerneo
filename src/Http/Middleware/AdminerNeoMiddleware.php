@@ -3,6 +3,7 @@ namespace SabbottLabs\AdminerNeo\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AdminerNeoMiddleware
 {
@@ -12,12 +13,14 @@ class AdminerNeoMiddleware
             abort(403, 'AdminerNeo is disabled');
         }
 
+        $nonce = Str::random(32);
+        $request->attributes->set('csp-nonce', $nonce);
+
         $response = $next($request);
 
-        // Add CSP headers for AdminerNeo
         $response->headers->set('Content-Security-Policy', 
             "default-src 'self'; " .
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " .
+            "script-src 'nonce-{$nonce}' 'strict-dynamic' 'unsafe-eval'; " .
             "style-src 'self' 'unsafe-inline'; " .
             "img-src 'self' data: blob:; " .
             "connect-src 'self'"
