@@ -11,6 +11,10 @@ class AdminerNeoServiceProvider extends ServiceProvider
         if (!config('adminerneo.enabled', true)) {
             return;
         }
+
+        // Create required directories
+        $resourcePath = resource_path('adminerneo');
+        $pluginsPath = $resourcePath . '/plugins';
     
         if (!$this->app->routesAreCached()) {
             $this->registerRoutes($router);
