@@ -44,15 +44,15 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
-        "post-install-cmd": [
-            "@copy-adminerneo"
-        ],
-        "post-update-cmd": [
-            "@copy-adminerneo"
-        ],
         "copy-adminerneo": [
             "mkdir -p resources/adminerneo",
             "cp -r ../laravel-adminerneo-builder/output/* resources/adminerneo/"
+        ],
+        "post-package-install": [
+            "@copy-adminerneo"
+        ],
+        "post-package-update": [
+            "@copy-adminerneo"
         ]
     }
 }
