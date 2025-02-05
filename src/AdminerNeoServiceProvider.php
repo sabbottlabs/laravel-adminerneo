@@ -11,21 +11,31 @@ class AdminerNeoServiceProvider extends ServiceProvider
         if (!config('adminerneo.enabled', true)) {
             return;
         }
-
-        // Create required directories
-        $resourcePath = resource_path('adminerneo');
-        $pluginsPath = $resourcePath . '/plugins';
+    
+        if ($this->app->runningInConsole()) {
+            // Create directories before publishing
+            $resourcePath = resource_path('adminerneo');
+            $pluginsPath = $resourcePath . '/plugins';
+    
+            if (!is_dir($resourcePath)) {
+                mkdir($resourcePath, 0755, true);
+            }
+    
+            if (!is_dir($pluginsPath)) {
+                mkdir($pluginsPath, 0755, true);
+            }
+    
+            // Publish all files
+            $this->publishes([
+                __DIR__.'/../config/adminerneo.php' => config_path('adminerneo.php'),
+                __DIR__.'/../resources/adminerneo' => resource_path('adminerneo'),
+            ], 'adminerneo');
+        }
     
         if (!$this->app->routesAreCached()) {
             $this->registerRoutes($router);
         }
     
-        // Single publish group for all files
-        $this->publishes([
-            __DIR__.'/../config/adminerneo.php' => config_path('adminerneo.php'),
-            __DIR__.'/../resources/adminerneo' => resource_path('adminerneo'),
-        ], 'adminerneo');
-
         $router->aliasMiddleware('adminerneo', AdminerNeoMiddleware::class);
     }
 

@@ -44,12 +44,15 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
-        "post-autoload-dump": [
+        "post-install-cmd": [
+            "@copy-adminerneo"
+        ],
+        "post-update-cmd": [
             "@copy-adminerneo"
         ],
         "copy-adminerneo": [
             "mkdir -p resources/adminerneo",
-            "cp -r vendor/sabbottlabs/laravel-adminerneo-builder/output/* resources/adminerneo/"
+            "cp -r ../laravel-adminerneo-builder/output/* resources/adminerneo/"
         ]
     }
 }
