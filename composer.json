@@ -13,6 +13,10 @@
         "mssql"
     ],
     "homepage": "https://github.com/sabbottlabs/laravel-adminerneo",
+    "support": {
+        "issues": "https://github.com/sabbottlabs/laravel-adminerneo-builder/issues",
+        "source": "https://github.com/sabbottlabs/laravel-adminerneo-builder"
+    },
     "license": ["Apache-2.0", "GPL-2.0-only"],
     "authors": [
         {
