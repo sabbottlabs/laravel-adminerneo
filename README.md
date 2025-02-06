@@ -27,7 +27,6 @@ php artisan vendor:publish --tag=adminerneo
 ```env
 ADMINERNEO_ENABLED=true
 ADMINERNEO_ROUTE_PREFIX=adminerneo
-ADMINERNEO_AUTO_LOGIN=false
 ```
 
 ## Content Security Policy (CSP)
