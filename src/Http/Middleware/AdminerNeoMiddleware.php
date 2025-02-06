@@ -5,6 +5,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use function config;
+
 class AdminerNeoMiddleware
 {
     public function handle(Request $request, Closure $next)

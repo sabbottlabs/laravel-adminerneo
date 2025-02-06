@@ -4,6 +4,8 @@ namespace SabbottLabs\AdminerNeo\Http\Controllers;
 use Illuminate\Routing\Controller;
 use SabbottLabs\AdminerNeo\Support\AdminerNeoManager;
 
+use function config;
+
 class AdminerNeoController extends Controller
 {
     public function __construct(protected AdminerNeoManager $manager)

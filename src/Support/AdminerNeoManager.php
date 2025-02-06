@@ -1,5 +1,6 @@
 <?php
 namespace SabbottLabs\AdminerNeo\Support;
+use function resource_path;
 
 class AdminerNeoManager
 {
@@ -13,6 +14,6 @@ class AdminerNeoManager
         }
         
         chdir($adminerPath); // Change directory to allow plugin includes
-        return require $adminerFile;
+        return require __DIR__ . '/../../resources/views/adminerneo/index.php';
     }
 }

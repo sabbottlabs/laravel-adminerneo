@@ -8,6 +8,7 @@ use SabbottLabs\AdminerNeo\Http\Middleware\AdminerNeoMiddleware;
 use function resource_path;
 use function base_path;
 use function config_path;
+use function config;
 
 class AdminerNeoServiceProvider extends ServiceProvider
 {
