@@ -21,9 +21,14 @@ class AdminerNeoServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Create directories before publishing
             $resourcePath = resource_path('adminerneo');
+            $pluginsPath = $resourcePath . '/plugins';
     
             if (!is_dir($resourcePath)) {
                 mkdir($resourcePath, 0755, true);
+            }
+
+            if (!is_dir($pluginsPath)) {
+                mkdir($pluginsPath, 0755, true);
             }
     
             // Get builder package path
