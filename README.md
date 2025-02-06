@@ -29,6 +29,20 @@ ADMINERNEO_ENABLED=true
 ADMINERNEO_ROUTE_PREFIX=adminerneo
 ```
 
+## Updating
+
+After updating the package via Composer, you should republish the assets:
+
+```bash
+# Republish only assets
+php artisan vendor:publish --tag=adminerneo-assets --force
+
+# Republish everything (including config)
+php artisan vendor:publish --tag=adminerneo --force
+```
+
+> **Note**: The --force flag will overwrite existing files. Make sure to backup any customizations.
+
 ## Content Security Policy (CSP)
 
 AdminerNeo requires specific CSP headers to function properly. The package sets these by default, but you may need to adjust them if:
@@ -37,7 +51,7 @@ AdminerNeo requires specific CSP headers to function properly. The package sets 
 - You see browser console warnings
 - You need to customize security policies
 
-Note: Browser console may show CSP warnings due to 'strict-dynamic' and nonce usage. These warnings are expected and don't affect functionality.
+> **Note**: Browser console may show CSP warnings due to 'strict-dynamic' and nonce usage. These warnings are expected and don't affect functionality.
 
 ## Configuration
 

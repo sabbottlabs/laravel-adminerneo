@@ -34,11 +34,17 @@ class AdminerNeoServiceProvider extends ServiceProvider
             // Get builder package path
             $builderPath = base_path('vendor/sabbottlabs/laravel-adminerneo-builder');
 
-            // Publish all files
+            // Publish files
+            // Config and assets (everything)
             $this->publishes([
                 __DIR__.'/../config/adminerneo.php' => config_path('adminerneo.php'),
                 $builderPath . '/output' => resource_path('adminerneo'),
             ], 'adminerneo');
+
+            // Assets only
+            $this->publishes([
+                $builderPath . '/output' => resource_path('adminerneo'),
+            ], 'adminerneo-assets');
         }
     
         if (!$this->app->routesAreCached()) {
