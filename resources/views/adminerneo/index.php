@@ -1,7 +1,5 @@
 <?php
 use Adminer\Adminer;
-use function resource_path;
-use function config;
 
 function create_adminer(): Adminer
 {

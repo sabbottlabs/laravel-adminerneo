@@ -1,6 +1,6 @@
 {
     "name": "sabbottlabs/laravel-adminerneo",
-    "description": "Laravel integration for AdminerNeo database management",
+    "description": "Laravel integration for AdminerNeo v5, a modern database management tool",
     "type": "library",
     "version": "1.0.0",
     "keywords": [
@@ -13,6 +13,7 @@
         "sqlite",
         "mssql"
     ],
+    "homepage": "https://github.com/sabbottlabs/laravel-adminerneo",
     "license": ["Apache-2.0", "GPL-2.0-only"],
     "authors": [
         {
@@ -21,7 +22,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "laravel/framework": "^10.0|^11.0",
         "ext-pdo": "*",
         "sabbottlabs/laravel-adminerneo-builder": "^1.0.0"

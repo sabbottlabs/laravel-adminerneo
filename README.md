@@ -1,6 +1,6 @@
 # Laravel AdminerNeo
 
-Laravel integration for AdminerNeo database management.
+Laravel integration for AdminerNeo v5, a modern database management tool.
 
 ## Installation
 
@@ -37,17 +37,8 @@ AdminerNeo requires specific CSP headers to function properly. The package sets 
 - You see browser console warnings
 - You need to customize security policies
 
-Default CSP headers set by AdminerNeoMiddleware:
-```php
-Content-Security-Policy: 
-    default-src 'self';
-    script-src 'nonce-{random}' 'strict-dynamic' 'unsafe-eval';
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: blob:;
-    connect-src 'self';
-```
-
 Note: Browser console may show CSP warnings due to 'strict-dynamic' and nonce usage. These warnings are expected and don't affect functionality.
+
 ## Configuration
 
 See `config/adminerneo.php` for all configuration options.
