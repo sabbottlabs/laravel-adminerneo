@@ -1,6 +1,5 @@
 <?php
 use Adminer\Pluginer;
-use function resource_path;
 
 function create_adminer(): Pluginer
 {
