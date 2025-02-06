@@ -23,14 +23,6 @@ return [
     'middleware' => ['web', 'auth','adminerneo'],
 
     /**
-     * Auto Login Configuration
-     * 
-     * Enable automatic login using Laravel database configuration
-     * ATTENTION: Only enable with proper authentication
-     */
-    'autologin' => env('ADMINERNEO_AUTO_LOGIN', false),
-
-    /**
      * Interface Configuration
      * 
      * Interface options avaliable at resources/adminerneo/README.md
