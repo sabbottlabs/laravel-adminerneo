@@ -2,7 +2,6 @@
     "name": "sabbottlabs/laravel-adminerneo",
     "description": "Laravel integration for AdminerNeo v5, a modern database management tool",
     "type": "library",
-    "version": "1.0.0",
     "keywords": [
         "laravel11",
         "adminerneo",
