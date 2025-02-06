@@ -30,9 +30,9 @@ return [
      * 
      * Example:
      *  'plugins' => [
-     *      'enum-option => true',
-     *      'dump-zip => true',
-     *      'dump-json => true',
+     *      'enum-option' => true,
+     *      'dump-zip' => true,
+     *      'dump-json' => true,
      *      'file-upload' => [
      *          'upload_path' => storage_path('adminerneo/uploads/'),
      *          'display_path' => '/storage/adminerneo/uploads/',
