@@ -42,6 +42,17 @@ php artisan vendor:publish --tag=adminerneo --force
 ```
 
 > **Note**: The --force flag will overwrite existing files. Make sure to backup any customizations.
+> Make sure to:
+> - Backup any customizations
+> - Save any custom plugins you want to keep
+> - Note that some plugins may be incompatible with newer versions
+
+### Plugin Management
+The update process automatically removes old plugins to prevent compatibility issues. 
+If you have custom plugins:
+1. Back them up before updating
+2. Test compatibility with the new version
+3. Reinstall only compatible plugins after update
 
 ## Content Security Policy (CSP)
 
